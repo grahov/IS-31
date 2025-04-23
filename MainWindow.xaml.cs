@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using IS_31.Model;
+using IS_31.ViewModel;
 
 namespace IS_31
 {
@@ -26,12 +27,7 @@ namespace IS_31
         {
             InitializeComponent();
 
-
-            using (var context = new CollegeEntities()) 
-            {
-                var students = context.Student.ToList();
-                mainDg.ItemsSource = students;
-            }
+            DataContext = new MainVm();
         }
     }
 }
