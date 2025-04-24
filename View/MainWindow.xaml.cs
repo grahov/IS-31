@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using IS_31.Model;
 using IS_31.ViewModel;
 
-namespace IS_31
+namespace IS_31.View
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -28,6 +28,24 @@ namespace IS_31
             InitializeComponent();
 
             DataContext = new MainVm();
+
+            this.Activated += MainWindowActivated;
+        }
+
+        private void MainWindowActivated(object sender, EventArgs e)
+        {
+            (DataContext as MainVm).LoadStudents();
+        }
+
+        private void addStudentBtn_Click(object sender, RoutedEventArgs e)
+        {
+            (DataContext as MainVm).OpenAddWindow();
+        }
+
+        private void deleteStudentBtn_Click(object sender, RoutedEventArgs e)
+        {
+            (DataContext as MainVm).DeleteStudent((mainDg.SelectedItem as Student).Id);
+
         }
     }
 }

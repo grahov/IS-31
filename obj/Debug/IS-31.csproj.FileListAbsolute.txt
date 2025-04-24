@@ -6,12 +6,10 @@ C:\Users\AGU500\source\repos\IS-31\IS-31\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\AGU500\source\repos\IS-31\IS-31\bin\Debug\EntityFramework.xml
 C:\Users\AGU500\source\repos\IS-31\IS-31\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\IS-31.csproj.AssemblyReference.cache
-C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\MainWindow.g.cs
 C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\App.g.cs
 C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\IS-31_Content.g.cs
 C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\IS-31_MarkupCompile.cache
 C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\IS-31_MarkupCompile.lref
-C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\MainWindow.baml
 C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\IS-31.g.resources
 C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\IS_31.Properties.Resources.resources
 C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\IS-31.csproj.GenerateResource.cache
@@ -19,3 +17,10 @@ C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\IS-31.csproj.CoreCompileInput
 C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\IS-31.csproj.Up2Date
 C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\IS-31.exe
 C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\IS-31.pdb
+C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\View\MainWindow.g.cs
+C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\View\MainWindow.baml
+C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\App.baml
+C:\Users\AGU500\source\repos\IS-31\IS-31\bin\Debug\HandyControl.dll
+C:\Users\AGU500\source\repos\IS-31\IS-31\bin\Debug\HandyControl.xml
+C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\View\AddStudentWindow.g.cs
+C:\Users\AGU500\source\repos\IS-31\IS-31\obj\Debug\View\AddStudentWindow.baml
