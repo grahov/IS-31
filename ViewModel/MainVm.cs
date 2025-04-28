@@ -13,6 +13,7 @@ namespace IS_31.ViewModel
     public class MainVm : BaseViewModel
     {
         private List<Student> _students;
+        private Student _selectedStudent;
 
         public List<Student> Students
         {
@@ -20,6 +21,19 @@ namespace IS_31.ViewModel
             set
             {
                 SetPropertyChanged(ref _students, value);
+            }
+        }
+
+        public Student SelectedStudent
+        {
+            get
+            {
+                return _selectedStudent;
+            }
+
+            set
+            {
+                SetPropertyChanged(ref _selectedStudent, value);
             }
         }
 
@@ -36,13 +50,13 @@ namespace IS_31.ViewModel
 
             using (var context = new CollegeEntities())
             {
-                Students = await context.Student.Include("Group").ToListAsync();
+                Students = await context.Student.Include("Group").Where(student => student.IsDeleted == false).ToListAsync();
             }
         }
 
-        public void OpenAddWindow()
+        public void OpenAddWindow(Student student)
         {
-            var addWindow = new AddStudentWindow();
+            var addWindow = new AddStudentWindow(student);
             addWindow.ShowDialog();
         }
 

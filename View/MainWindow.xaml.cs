@@ -39,13 +39,22 @@ namespace IS_31.View
 
         private void addStudentBtn_Click(object sender, RoutedEventArgs e)
         {
-            (DataContext as MainVm).OpenAddWindow();
+            (DataContext as MainVm).OpenAddWindow(null);
         }
 
         private void deleteStudentBtn_Click(object sender, RoutedEventArgs e)
         {
-            (DataContext as MainVm).DeleteStudent((mainDg.SelectedItem as Student).Id);
+            var result = MessageBox.Show("Вы действительно хотите удалить выбранный объект?", "Внимание!", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
+            if (result == MessageBoxResult.Yes)
+            {
+                (DataContext as MainVm).DeleteStudent((mainDg.SelectedItem as Student).Id);
+            }
+        }
+
+        private void editStudentBtn_Click(object sender, RoutedEventArgs e)
+        {
+            (DataContext as MainVm).OpenAddWindow((DataContext as MainVm).SelectedStudent);
         }
     }
 }

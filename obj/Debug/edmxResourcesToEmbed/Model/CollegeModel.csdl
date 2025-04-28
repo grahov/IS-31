@@ -26,6 +26,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Student" Relationship="CollegeModel.StudentOfGroup" FromRole="Group" ToRole="Student" />
+    <Property Name="IsDeleted" Type="Boolean" />
   </EntityType>
   <Association Name="StudentOfGroup">
     <End Type="CollegeModel.Group" Role="Group" Multiplicity="*" />

@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         MinHeight="150"
         MinWidth="400"
-        Title="CourseWindow" Height="450" Width="800">
+        Title="Добавление или редактирование студента" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -17,6 +17,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBox
@@ -63,5 +64,12 @@
                 hc:BackgroundSwitchElement.MouseHoverBackground="Red" 
                 hc:BackgroundSwitchElement.MouseDownBackground="PaleVioletRed" Click="addButton_Click"/>
 
+        <TextBlock
+            Visibility="{Binding IsError}"
+            Grid.Row="5"
+            Foreground="Red"
+            Margin="10"
+            Text="{Binding Errors}">
+        </TextBlock>
     </Grid>
 </Window>

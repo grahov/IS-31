@@ -6,6 +6,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" />
   </EntityType>
   <EntityType Name="Student">
     <Key>
@@ -24,6 +25,7 @@
     </Key>
     <Property Name="IdStudent" Type="int" Nullable="false" />
     <Property Name="IdGroup" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="int" />
   </EntityType>
   <Association Name="FK_StudentOfGroup_Group">
     <End Role="Group" Type="Self.Group" Multiplicity="1">

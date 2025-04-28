@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using IS_31.Model;
 using IS_31.ViewModel;
 
 namespace IS_31.View
@@ -20,16 +21,16 @@ namespace IS_31.View
     /// </summary>
     public partial class AddStudentWindow : Window
     {
-        public AddStudentWindow()
+        public AddStudentWindow(Student student)
         {
             InitializeComponent();
 
-            DataContext = new AddStudentViewModel();
+            DataContext = new AddStudentViewModel(student);
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            var result = (DataContext as AddStudentViewModel).AddStudent();
+            var result = (DataContext as AddStudentViewModel).AddOrUpdateStudent();
 
             if (result)
             {
