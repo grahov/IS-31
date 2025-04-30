@@ -15,38 +15,47 @@
             <ColumnDefinition />
             <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
+        <StackPanel 
+            Width="600" 
+            Margin="32"
+            Grid.Column="0"
+            VerticalAlignment="Center">
+            <hc:LoadingLine Margin="0,30" Foreground="BlueViolet" Style="{StaticResource LoadingLineLarge}"/>
+        </StackPanel>
         <DataGrid
             AutoGenerateColumns="False"
             Grid.Column="0"
+            Visibility="{Binding IsLoad}"
             SelectedItem="{Binding SelectedStudent}"
             ItemsSource="{Binding Students}"
             Name="mainDg">
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Binding="{Binding Name}"
-                    Header="ФИО">
+            Binding="{Binding Name}"
+            Header="ФИО">
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Binding="{Binding Course}"
-                    Header="Курс">
+            Binding="{Binding Course}"
+            Header="Курс">
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Binding="{Binding Age}"
-                    Header="Возраст">
+            Binding="{Binding Age}"
+            Header="Возраст">
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Binding="{Binding Path=Group.Name}"
-                    Header="Группа">
+            Binding="{Binding Path=Group.Name}"
+            Header="Группа">
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 
+
         <Grid
             Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
             </Grid.RowDefinitions>
             <Button
                 Name="addStudentBtn"

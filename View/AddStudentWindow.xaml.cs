@@ -28,9 +28,9 @@ namespace IS_31.View
             DataContext = new AddStudentViewModel(student);
         }
 
-        private void addButton_Click(object sender, RoutedEventArgs e)
+        private async void addButton_Click(object sender, RoutedEventArgs e)
         {
-            var result = (DataContext as AddStudentViewModel).AddOrUpdateStudent();
+            var result = await (DataContext as AddStudentViewModel).AddOrUpdateStudent();
 
             if (result)
             {

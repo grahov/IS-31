@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
@@ -81,11 +82,11 @@ namespace IS_31.ViewModel
             LoadGroup();
         }
 
-        public void LoadGroup()
+        public async void LoadGroup()
         {
             using (var context = new CollegeEntities())
             {
-                Groups = context.Group.ToList();
+                Groups = await context.Group.ToListAsync();
             }
         }
 
@@ -121,7 +122,7 @@ namespace IS_31.ViewModel
             return errors;
         }
 
-        public bool AddOrUpdateStudent()
+        public async Task<bool> AddOrUpdateStudent()
         {
 
             var result = CheckFields();
@@ -145,21 +146,21 @@ namespace IS_31.ViewModel
             try
             {
 
-                // 1-ый способ:
+                //1 - ый способ:
                 //if (NewStudent.Id > 0)
                 //{
                 //    using (var context = new CollegeEntities())
                 //    {
                 //        NewStudent.Group = new List<Group>();
 
-                //        var studentFromDb = context.Student.FirstOrDefault(student => student.Id == NewStudent.Id);
+                //        var studentFromDb = await context.Student.FirstOrDefaultAsync(student => student.Id == NewStudent.Id);
 
                 //        studentFromDb.Name = NewStudent.Name;
                 //        studentFromDb.Age = NewStudent.Age;
                 //        studentFromDb.Course = NewStudent.Course;
                 //        studentFromDb.Group = NewStudent.Group;
 
-                //        context.SaveChanges();
+                //        await context.SaveChangesAsync();
 
                 //        return true;
                 //    }
@@ -171,14 +172,14 @@ namespace IS_31.ViewModel
                 {
                     NewStudent.Group = new List<Group>();
 
-                    var groupFromContext = context.Group.FirstOrDefault(group => group.Id == SelectedGroup.Id);
+                    var groupFromContext = await context.Group.FirstOrDefaultAsync(group => group.Id == SelectedGroup.Id);
 
                     NewStudent.Group.Clear();
 
                     NewStudent.Group.Add(groupFromContext);
                     NewStudent.IsDeleted = false;
                     context.Student.AddOrUpdate(NewStudent);
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
 
                     return true;
                 }
